@@ -46,3 +46,4 @@ first lesson\main.o: ../Inc/usart.h
 first lesson\main.o: ../Inc/gpio.h
 first lesson\main.o: .\Myself\public.h
 first lesson\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+first lesson\main.o: D:\Keil C51\ARM\ARMCC\Bin\..\include\string.h

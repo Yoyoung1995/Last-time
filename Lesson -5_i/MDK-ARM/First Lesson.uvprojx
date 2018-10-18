@@ -310,7 +310,7 @@
           </ArmAdsMisc>
           <Cads>
             <interw>1</interw>
-            <Optim>4</Optim>
+            <Optim>1</Optim>
             <oTime>0</oTime>
             <SplitLS>0</SplitLS>
             <OneElfS>1</OneElfS>
@@ -335,7 +335,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;    ../Drivers/STM32F1xx_HAL_Driver/Inc;    ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;    ../Drivers/CMSIS/Device/ST/STM32F1xx/Include;    ../Drivers/CMSIS/Include;    ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;    ../Middlewares/Third_Party/FreeRTOS/Source/include;    ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;    .\Myself</IncludePath>
+              <IncludePath>../Inc;      ../Drivers/STM32F1xx_HAL_Driver/Inc;      ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;      ../Drivers/CMSIS/Device/ST/STM32F1xx/Include;      ../Drivers/CMSIS/Include;      ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;      ../Middlewares/Third_Party/FreeRTOS/Source/include;      ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;      .\Myself</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -492,6 +492,21 @@
           </Files>
         </Group>
         <Group>
+          <GroupName>Application/Myself</GroupName>
+          <Files>
+            <File>
+              <FileName>public.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Myself\public.c</FilePath>
+            </File>
+            <File>
+              <FileName>Far_ModifyTask_Resources.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Myself\Far_ModifyTask_Resources.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
           <GroupName>Drivers/CMSIS</GroupName>
           <Files>
             <File>
@@ -558,16 +573,6 @@
               <FileName>cmsis_os.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Application/Myself</GroupName>
-          <Files>
-            <File>
-              <FileName>public.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Myself\public.c</FilePath>
             </File>
           </Files>
         </Group>

@@ -44,3 +44,5 @@ first lesson\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/
 first lesson\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 first lesson\stm32f1xx_it.o: .\Myself\public.h
 first lesson\stm32f1xx_it.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+first lesson\stm32f1xx_it.o: D:\Keil C51\ARM\ARMCC\Bin\..\include\string.h
+first lesson\stm32f1xx_it.o: ../Inc/usart.h

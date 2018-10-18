@@ -5,8 +5,10 @@
 #include "cmsis_os.h"
 #include "FreeRTOS.h"
 #include "task.h"
+#include "string.h"
+#include "usart.h"
 
-
+//---------------------------------串口不定长接收 
 #define		RX_LEN  512
 
 typedef struct{
@@ -14,6 +16,12 @@ typedef struct{
 	uint16_t  RX_Size;
 	uint8_t  RX_pData[RX_LEN];
 }USART_RECEIVETYPE;
+//----------------------------------节能控制板寄存器
+#define REGISTER_SIZE 37  //地址从0开始 0~36
+
+extern uint16_t BoardRegister[REGISTER_SIZE];
+
+
 
 extern USART_RECEIVETYPE UsartType_1;
 extern USART_RECEIVETYPE UsartType_2;
@@ -24,4 +32,8 @@ extern void UsartReceive_IDLE(UART_HandleTypeDef *huartX, USART_RECEIVETYPE * pS
 extern osSemaphoreId bSem_USART1_ServeHandle;
 extern osSemaphoreId bSem_USART2_ServeHandle;
 extern osSemaphoreId bSem_USART3_ServeHandle;
+
+//和服务器通讯的CRC校验算法
+extern uint16_t gprsCRC(const uint8_t * pBuf, int nNum);
+
 #endif

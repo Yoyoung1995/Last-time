@@ -43,3 +43,6 @@ first lesson\freertos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
 first lesson\freertos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
 first lesson\freertos.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
 first lesson\freertos.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h
+first lesson\freertos.o: D:\Keil C51\ARM\ARMCC\Bin\..\include\string.h
+first lesson\freertos.o: ../Inc/usart.h
+first lesson\freertos.o: .\Myself\Far_ModifyTask_Resources.h

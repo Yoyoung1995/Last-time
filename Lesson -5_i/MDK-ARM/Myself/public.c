@@ -25,7 +25,28 @@ void UsartReceive_IDLE(UART_HandleTypeDef *huartX, USART_RECEIVETYPE * pStruct)
 }  
 
 
-
+//和服务器通讯的CRC校验算法
+uint16_t gprsCRC(const uint8_t * pBuf, int nNum)
+{
+	uint16_t wCrc = 0xFFFF;
+	for(int i=0; i<nNum; i++)	
+	{
+		wCrc ^= pBuf[i];
+		for(int j=0; j<8; j++)		
+		{
+			if(wCrc & 1)		
+			{	
+				wCrc >>= 1; 		
+				wCrc ^= 0xA001; 	
+			}
+			else	
+			{
+				wCrc >>= 1; 
+			}	
+		}	
+	}
+	return wCrc;
+}
 
 
 
@@ -40,8 +61,8 @@ USART_RECEIVETYPE UsartType_2 = {0};
 USART_RECEIVETYPE UsartType_3 = {0};
 
 
-
-
+//节能控制板寄存器
+uint16_t BoardRegister[REGISTER_SIZE] = {0};
 
 
 //------------------ Public Variables : End

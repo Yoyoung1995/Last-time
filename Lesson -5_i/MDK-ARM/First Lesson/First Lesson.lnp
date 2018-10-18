@@ -20,6 +20,8 @@
 "first lesson\stm32f1xx_it.o"
 "first lesson\stm32f1xx_hal_msp.o"
 "first lesson\stm32f1xx_hal_timebase_tim.o"
+"first lesson\public.o"
+"first lesson\far_modifytask_resources.o"
 "first lesson\system_stm32f1xx.o"
 "first lesson\startup_stm32f103xe.o"
 "first lesson\heap_4.o"
@@ -31,7 +33,6 @@
 "first lesson\tasks.o"
 "first lesson\timers.o"
 "first lesson\cmsis_os.o"
-"first lesson\public.o"
 --library_type=microlib --strict --scatter "First Lesson\First Lesson.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
