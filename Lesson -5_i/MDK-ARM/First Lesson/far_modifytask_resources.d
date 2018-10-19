@@ -45,3 +45,5 @@ first lesson\far_modifytask_resources.o: ../Middlewares/Third_Party/FreeRTOS/Sou
 first lesson\far_modifytask_resources.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 first lesson\far_modifytask_resources.o: D:\Keil C51\ARM\ARMCC\Bin\..\include\string.h
 first lesson\far_modifytask_resources.o: ../Inc/usart.h
+first lesson\far_modifytask_resources.o: Myself\485Module.h
+first lesson\far_modifytask_resources.o: Myself\public.h

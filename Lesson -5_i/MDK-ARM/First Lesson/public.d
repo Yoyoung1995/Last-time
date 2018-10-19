@@ -44,3 +44,5 @@ first lesson\public.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr
 first lesson\public.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 first lesson\public.o: D:\Keil C51\ARM\ARMCC\Bin\..\include\string.h
 first lesson\public.o: ../Inc/usart.h
+first lesson\public.o: Myself\485Module.h
+first lesson\public.o: Myself\public.h

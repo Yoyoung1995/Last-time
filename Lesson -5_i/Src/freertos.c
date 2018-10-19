@@ -54,6 +54,7 @@
 /* USER CODE BEGIN Includes */     
 #include "public.h"
 #include "Far_ModifyTask_Resources.h"
+#include "GPRS_DataSendTask_Resources.h"
 /* USER CODE END Includes */
 
 /* Variables -----------------------------------------------------------------*/
@@ -61,10 +62,12 @@ osThreadId Far_ModifyHandle;
 osThreadId USART1_ServeHandle;
 osThreadId USART2_ServeHandle;
 osThreadId USART3_ServeHandle;
-osThreadId ModbusDevsReadHandle;
+osThreadId GPRS_DataSendHandle;
+osTimerId Timer_GPRS_DataSendHandle;
 osSemaphoreId bSem_USART1_ServeHandle;
 osSemaphoreId bSem_USART2_ServeHandle;
 osSemaphoreId bSem_USART3_ServeHandle;
+osSemaphoreId bSem_GPRS_DataSendHandle;
 
 /* USER CODE BEGIN Variables */
 
@@ -75,7 +78,8 @@ void Far_ModifyTask(void const * argument);
 void USART1_Serve_Task(void const * argument);
 void USART2_Serve_Task(void const * argument);
 void USART3_Serve_Task(void const * argument);
-void ModbusDevsReadTask(void const * argument);
+void GPRS_DataSendTask(void const * argument);
+void Timer_GPRS_DataSendCallback(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -109,12 +113,22 @@ void MX_FREERTOS_Init(void) {
   osSemaphoreDef(bSem_USART3_Serve);
   bSem_USART3_ServeHandle = osSemaphoreCreate(osSemaphore(bSem_USART3_Serve), 1);
 
+  /* definition and creation of bSem_GPRS_DataSend */
+  osSemaphoreDef(bSem_GPRS_DataSend);
+  bSem_GPRS_DataSendHandle = osSemaphoreCreate(osSemaphore(bSem_GPRS_DataSend), 1);
+
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
 
+  /* Create the timer(s) */
+  /* definition and creation of Timer_GPRS_DataSend */
+  osTimerDef(Timer_GPRS_DataSend, Timer_GPRS_DataSendCallback);
+  Timer_GPRS_DataSendHandle = osTimerCreate(osTimer(Timer_GPRS_DataSend), osTimerPeriodic, NULL);
+
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
+	osTimerStart(Timer_GPRS_DataSendHandle,5000);
   /* USER CODE END RTOS_TIMERS */
 
   /* Create the thread(s) */
@@ -134,9 +148,9 @@ void MX_FREERTOS_Init(void) {
   osThreadDef(USART3_Serve, USART3_Serve_Task, osPriorityRealtime, 0, 128);
   USART3_ServeHandle = osThreadCreate(osThread(USART3_Serve), NULL);
 
-  /* definition and creation of ModbusDevsRead */
-  osThreadDef(ModbusDevsRead, ModbusDevsReadTask, osPriorityNormal, 0, 128);
-  ModbusDevsReadHandle = osThreadCreate(osThread(ModbusDevsRead), NULL);
+  /* definition and creation of GPRS_DataSend */
+  osThreadDef(GPRS_DataSend, GPRS_DataSendTask, osPriorityNormal, 0, 128);
+  GPRS_DataSendHandle = osThreadCreate(osThread(GPRS_DataSend), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -145,6 +159,7 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
 	Far_Modify.xPointerQueue = xQueueCreate(5,sizeof(void *));
+	GPRS_DataSend.xPointerQueue = xQueueCreate(20,sizeof(void *));
   /* USER CODE END RTOS_QUEUES */
 }
 
@@ -184,11 +199,13 @@ void Far_ModifyTask(void const * argument)
 					BoardRegister[Addr_Temp] = 	pMail->RX_pData[15+4*i] + ( pMail->RX_pData[16+4*i]<<8 );		
 				}
 				//返回0x80 + 0x02
-				HAL_UART_Transmit(&huart3,ack,2,osWaitForever);
+				USART3_485_Send(ack,2);
 			}
 		}
 		//---------处理结束
 		vPortFree(pMail);
+		pMail = NULL;
+		//----------Done
   }
   /* USER CODE END Far_ModifyTask */
 }
@@ -220,10 +237,12 @@ void USART1_Serve_Task(void const * argument)
 void USART2_Serve_Task(void const * argument)
 {
   /* USER CODE BEGIN USART2_Serve_Task */
+	USART_RECEIVETYPE * pMail = NULL;
   /* Infinite loop */
 	/**
 		这是一个串口2中断服务任务 ，
 		为串口2接收到的数据提供处理服务
+		串口2接收到的只有从机的响应数据，简单判断从机设备号后统统扔入GPRS_DataSendTask任务内建消息队列
 	**/
   for(;;)
   {
@@ -233,6 +252,18 @@ void USART2_Serve_Task(void const * argument)
 			UsartType_2.RX_flag = 0;			//clean flag
 		
 		//----------  处理从下面开始 --------------
+		if( ( UsartType_2.RX_pData[0] != 1)&&(UsartType_2.RX_pData[0] != 63) )			//先简单判断
+				continue;
+		if( uxQueueSpacesAvailable(GPRS_DataSend.xPointerQueue)>=1 )					//队列有没有满？
+				pMail = pvPortMalloc(sizeof(USART_RECEIVETYPE));		//申请动态内存
+		if( pMail != NULL )				//动态内存申请成功了？
+		{
+				memcpy(pMail,&UsartType_2,sizeof(UsartType_2));		//内存拷贝
+				xQueueSend(GPRS_DataSend.xPointerQueue,		//扔入消息队列
+								 &pMail,
+								 portMAX_DELAY );		
+		}
+		pMail = NULL;
 		
   }
   /* USER CODE END USART2_Serve_Task */
@@ -257,7 +288,8 @@ void USART3_Serve_Task(void const * argument)
 			UsartType_3.RX_flag = 0;			//clean flag
 		
 		//----------  处理从下面开始 --------------
-		pMail = pvPortMalloc(sizeof(USART_RECEIVETYPE));	//申请动态内存，返回指针
+		if( uxQueueSpacesAvailable(Far_Modify.xPointerQueue)>=1 )			//查询队列有没有满？剩余的项数
+			pMail = pvPortMalloc(sizeof(USART_RECEIVETYPE));	//申请动态内存，返回指针
 		if(pMail != NULL)
 		{
 			memcpy(pMail,&UsartType_3,sizeof(UsartType_3));				//内存拷贝
@@ -265,20 +297,72 @@ void USART3_Serve_Task(void const * argument)
 								 &pMail,
 								 portMAX_DELAY );
 		}
+		pMail = NULL;
   }
   /* USER CODE END USART3_Serve_Task */
 }
 
-/* ModbusDevsReadTask function */
-void ModbusDevsReadTask(void const * argument)
+/* GPRS_DataSendTask function */
+void GPRS_DataSendTask(void const * argument)
 {
-  /* USER CODE BEGIN ModbusDevsReadTask */
+  /* USER CODE BEGIN GPRS_DataSendTask */
+	USART_RECEIVETYPE * pMail = NULL;
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+		osSemaphoreWait(bSem_GPRS_DataSendHandle,osWaitForever);
+		
+		Modbus_03_Search( 1, 1200,28);		//读外机 1200~1227地址的寄存器
+		
+		xQueueReceive(GPRS_DataSend.xPointerQueue,		//等待消息队列  500个Ticks
+									&pMail,
+									500);		
+		
+		Modbus_03_Search( 1, 5104,19);		//读外机 5104~5122地址的寄存器
+		
+		Modbus_Modify(pMail);				//参数修改
+		vPortFree(pMail);		//动态内存释放
+		pMail = NULL;				
+		
+ 		xQueueReceive(GPRS_DataSend.xPointerQueue,		//等待消息队列  500个Ticks
+									&pMail,
+									500);	   
+		
+		Modbus_03_Search( 63, 0x2000,16);		//读电表 2000H~200FH地址的寄存器
+		
+		Modbus_Modify(pMail);					//参数修改
+		vPortFree(pMail);		//动态内存释放
+		pMail = NULL;					
+
+ 		xQueueReceive(GPRS_DataSend.xPointerQueue,		//等待消息队列  500个Ticks
+									&pMail,
+									500);	    
+
+		Modbus_03_Search( 63, 0x4000,2);		//读电表 4000H~4001H地址的寄存器
+		
+		Modbus_Modify(pMail);					//参数修改
+		vPortFree(pMail);		//动态内存释放
+		pMail = NULL;		
+
+ 		xQueueReceive(GPRS_DataSend.xPointerQueue,		//等待消息队列  500个Ticks
+									&pMail,
+									500);	  
+									
+		Modbus_Modify(pMail);					//参数修改
+		vPortFree(pMail);		//动态内存释放
+		pMail = NULL;		
+
+					//向GPRS上传节能控制板寄存器信息
   }
-  /* USER CODE END ModbusDevsReadTask */
+  /* USER CODE END GPRS_DataSendTask */
+}
+
+/* Timer_GPRS_DataSendCallback function */
+void Timer_GPRS_DataSendCallback(void const * argument)
+{
+  /* USER CODE BEGIN Timer_GPRS_DataSendCallback */
+  osSemaphoreRelease(bSem_GPRS_DataSendHandle);
+  /* USER CODE END Timer_GPRS_DataSendCallback */
 }
 
 /* USER CODE BEGIN Application */

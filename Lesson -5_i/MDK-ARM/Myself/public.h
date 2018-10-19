@@ -7,9 +7,10 @@
 #include "task.h"
 #include "string.h"
 #include "usart.h"
+#include "485Module.h"
 
 //---------------------------------串口不定长接收 
-#define		RX_LEN  512
+#define		RX_LEN  256
 
 typedef struct{
 	uint8_t RX_flag:1;
@@ -35,5 +36,9 @@ extern osSemaphoreId bSem_USART3_ServeHandle;
 
 //和服务器通讯的CRC校验算法
 extern uint16_t gprsCRC(const uint8_t * pBuf, int nNum);
+
+//大小端转换函数
+// pBuf: 数组指针  ,  len  数组长度
+extern void ArrayTurn(uint8_t * pBuf, uint8_t len);
 
 #endif

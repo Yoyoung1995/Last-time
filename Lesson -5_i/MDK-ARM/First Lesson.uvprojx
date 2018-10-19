@@ -335,7 +335,7 @@
               <MiscControls></MiscControls>
               <Define>USE_HAL_DRIVER,STM32F103xE</Define>
               <Undefine></Undefine>
-              <IncludePath>../Inc;       ../Drivers/STM32F1xx_HAL_Driver/Inc;       ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;       ../Drivers/CMSIS/Device/ST/STM32F1xx/Include;       ../Drivers/CMSIS/Include;       ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;       ../Middlewares/Third_Party/FreeRTOS/Source/include;       ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;       .\Myself</IncludePath>
+              <IncludePath>../Inc;           ../Drivers/STM32F1xx_HAL_Driver/Inc;           ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy;           ../Drivers/CMSIS/Device/ST/STM32F1xx/Include;           ../Drivers/CMSIS/Include;           ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3;           ../Middlewares/Third_Party/FreeRTOS/Source/include;           ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS;           .\Myself</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -376,6 +376,76 @@
         </TargetArmAds>
       </TargetOption>
       <Groups>
+        <Group>
+          <GroupName>Application/User</GroupName>
+          <Files>
+            <File>
+              <FileName>main.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/main.c</FilePath>
+            </File>
+            <File>
+              <FileName>gpio.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/gpio.c</FilePath>
+            </File>
+            <File>
+              <FileName>dma.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/dma.c</FilePath>
+            </File>
+            <File>
+              <FileName>freertos.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/freertos.c</FilePath>
+            </File>
+            <File>
+              <FileName>usart.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/usart.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f1xx_it.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/stm32f1xx_it.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f1xx_hal_msp.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/stm32f1xx_hal_msp.c</FilePath>
+            </File>
+            <File>
+              <FileName>stm32f1xx_hal_timebase_TIM.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/stm32f1xx_hal_timebase_TIM.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>Application/Myself</GroupName>
+          <Files>
+            <File>
+              <FileName>public.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Myself\public.c</FilePath>
+            </File>
+            <File>
+              <FileName>Far_ModifyTask_Resources.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Myself\Far_ModifyTask_Resources.c</FilePath>
+            </File>
+            <File>
+              <FileName>GPRS_DataSendTask_Resources.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Myself\GPRS_DataSendTask_Resources.c</FilePath>
+            </File>
+            <File>
+              <FileName>485Module.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Myself\485Module.c</FilePath>
+            </File>
+          </Files>
+        </Group>
         <Group>
           <GroupName>Drivers/STM32F1xx_HAL_Driver</GroupName>
           <Files>
@@ -443,66 +513,6 @@
               <FileName>stm32f1xx_hal_flash_ex.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Application/User</GroupName>
-          <Files>
-            <File>
-              <FileName>main.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/main.c</FilePath>
-            </File>
-            <File>
-              <FileName>gpio.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/gpio.c</FilePath>
-            </File>
-            <File>
-              <FileName>dma.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/dma.c</FilePath>
-            </File>
-            <File>
-              <FileName>freertos.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/freertos.c</FilePath>
-            </File>
-            <File>
-              <FileName>usart.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/usart.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f1xx_it.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/stm32f1xx_it.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f1xx_hal_msp.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/stm32f1xx_hal_msp.c</FilePath>
-            </File>
-            <File>
-              <FileName>stm32f1xx_hal_timebase_TIM.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/stm32f1xx_hal_timebase_TIM.c</FilePath>
-            </File>
-          </Files>
-        </Group>
-        <Group>
-          <GroupName>Application/Myself</GroupName>
-          <Files>
-            <File>
-              <FileName>public.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Myself\public.c</FilePath>
-            </File>
-            <File>
-              <FileName>Far_ModifyTask_Resources.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Myself\Far_ModifyTask_Resources.c</FilePath>
             </File>
           </Files>
         </Group>

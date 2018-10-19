@@ -25,7 +25,7 @@ void UsartReceive_IDLE(UART_HandleTypeDef *huartX, USART_RECEIVETYPE * pStruct)
 }  
 
 
-//和服务器通讯的CRC校验算法
+//和服务器通讯的CRC校验算法   同MODBUS的CRC
 uint16_t gprsCRC(const uint8_t * pBuf, int nNum)
 {
 	uint16_t wCrc = 0xFFFF;
@@ -48,8 +48,19 @@ uint16_t gprsCRC(const uint8_t * pBuf, int nNum)
 	return wCrc;
 }
 
-
-
+//大小端转换函数
+// pBuf: 数组指针  ,  len  数组长度
+void ArrayTurn(uint8_t * pBuf, uint8_t len)
+{
+	uint8_t temp[128] = {0};
+	
+	memcpy(temp,pBuf,len);
+	
+	for(uint8_t i=0;i<len;i++)
+	{
+		*(pBuf+i) = temp[len-1- i];
+	}
+}
 
 //------------------ Public Functions : End
 
