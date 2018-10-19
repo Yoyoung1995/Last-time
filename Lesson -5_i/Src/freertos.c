@@ -61,6 +61,7 @@ osThreadId Far_ModifyHandle;
 osThreadId USART1_ServeHandle;
 osThreadId USART2_ServeHandle;
 osThreadId USART3_ServeHandle;
+osThreadId ModbusDevsReadHandle;
 osSemaphoreId bSem_USART1_ServeHandle;
 osSemaphoreId bSem_USART2_ServeHandle;
 osSemaphoreId bSem_USART3_ServeHandle;
@@ -74,6 +75,7 @@ void Far_ModifyTask(void const * argument);
 void USART1_Serve_Task(void const * argument);
 void USART2_Serve_Task(void const * argument);
 void USART3_Serve_Task(void const * argument);
+void ModbusDevsReadTask(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -131,6 +133,10 @@ void MX_FREERTOS_Init(void) {
   /* definition and creation of USART3_Serve */
   osThreadDef(USART3_Serve, USART3_Serve_Task, osPriorityRealtime, 0, 128);
   USART3_ServeHandle = osThreadCreate(osThread(USART3_Serve), NULL);
+
+  /* definition and creation of ModbusDevsRead */
+  osThreadDef(ModbusDevsRead, ModbusDevsReadTask, osPriorityNormal, 0, 128);
+  ModbusDevsReadHandle = osThreadCreate(osThread(ModbusDevsRead), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -261,6 +267,18 @@ void USART3_Serve_Task(void const * argument)
 		}
   }
   /* USER CODE END USART3_Serve_Task */
+}
+
+/* ModbusDevsReadTask function */
+void ModbusDevsReadTask(void const * argument)
+{
+  /* USER CODE BEGIN ModbusDevsReadTask */
+  /* Infinite loop */
+  for(;;)
+  {
+    osDelay(1);
+  }
+  /* USER CODE END ModbusDevsReadTask */
 }
 
 /* USER CODE BEGIN Application */
