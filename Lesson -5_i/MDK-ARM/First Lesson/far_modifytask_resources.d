@@ -32,6 +32,16 @@ first lesson\far_modifytask_resources.o: ../Middlewares/Third_Party/FreeRTOS/Sou
 first lesson\far_modifytask_resources.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 first lesson\far_modifytask_resources.o: D:\Keil C51\ARM\ARMCC\Bin\..\include\stddef.h
 first lesson\far_modifytask_resources.o: ../Inc/FreeRTOSConfig.h
+first lesson\far_modifytask_resources.o: ..\Src\TraceRecorder\include\trcRecorder.h
+first lesson\far_modifytask_resources.o: ..\Src\TraceRecorder\config\trcConfig.h
+first lesson\far_modifytask_resources.o: ..\Src\TraceRecorder\include\trcPortDefines.h
+first lesson\far_modifytask_resources.o: ..\Src\TraceRecorder\config\trcStreamingConfig.h
+first lesson\far_modifytask_resources.o: ..\Src\TraceRecorder\include\trcHardwarePort.h
+first lesson\far_modifytask_resources.o: ..\Src\TraceRecorder\streamports\Jlink_RTT\include\trcStreamingPort.h
+first lesson\far_modifytask_resources.o: ..\Src\TraceRecorder\streamports\Jlink_RTT\include\SEGGER_RTT_Conf.h
+first lesson\far_modifytask_resources.o: ..\Src\TraceRecorder\streamports\Jlink_RTT\include\SEGGER_RTT.h
+first lesson\far_modifytask_resources.o: ..\Src\TraceRecorder\include\trcKernelPort.h
+first lesson\far_modifytask_resources.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 first lesson\far_modifytask_resources.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 first lesson\far_modifytask_resources.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
 first lesson\far_modifytask_resources.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h

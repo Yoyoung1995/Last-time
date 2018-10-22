@@ -32,6 +32,16 @@ first lesson\485module.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/
 first lesson\485module.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 first lesson\485module.o: D:\Keil C51\ARM\ARMCC\Bin\..\include\stddef.h
 first lesson\485module.o: ../Inc/FreeRTOSConfig.h
+first lesson\485module.o: ..\Src\TraceRecorder\include\trcRecorder.h
+first lesson\485module.o: ..\Src\TraceRecorder\config\trcConfig.h
+first lesson\485module.o: ..\Src\TraceRecorder\include\trcPortDefines.h
+first lesson\485module.o: ..\Src\TraceRecorder\config\trcStreamingConfig.h
+first lesson\485module.o: ..\Src\TraceRecorder\include\trcHardwarePort.h
+first lesson\485module.o: ..\Src\TraceRecorder\streamports\Jlink_RTT\include\trcStreamingPort.h
+first lesson\485module.o: ..\Src\TraceRecorder\streamports\Jlink_RTT\include\SEGGER_RTT_Conf.h
+first lesson\485module.o: ..\Src\TraceRecorder\streamports\Jlink_RTT\include\SEGGER_RTT.h
+first lesson\485module.o: ..\Src\TraceRecorder\include\trcKernelPort.h
+first lesson\485module.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 first lesson\485module.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 first lesson\485module.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
 first lesson\485module.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h

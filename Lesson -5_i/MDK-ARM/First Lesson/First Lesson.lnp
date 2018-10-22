@@ -35,6 +35,11 @@
 "first lesson\tasks.o"
 "first lesson\timers.o"
 "first lesson\cmsis_os.o"
+"first lesson\trckernelport.o"
+"first lesson\trcsnapshotrecorder.o"
+"first lesson\trcstreamingrecorder.o"
+"first lesson\segger_rtt.o"
+"first lesson\trcstreamingport.o"
 --library_type=microlib --strict --scatter "First Lesson\First Lesson.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers

@@ -312,13 +312,13 @@ void GPRS_DataSendTask(void const * argument)
   {
 		osSemaphoreWait(bSem_GPRS_DataSendHandle,osWaitForever);
 		
-		Modbus_03_Search( 1, 1200,28);		//读外机 1200~1227地址的寄存器
+		Modbus_03_Search( 1, 1199,28);		//读外机 1200~1227地址的寄存器
 		
 		xQueueReceive(GPRS_DataSend.xPointerQueue,		//等待消息队列  500个Ticks
 									&pMail,
 									500);		
 		
-		Modbus_03_Search( 1, 5104,19);		//读外机 5104~5122地址的寄存器
+		Modbus_03_Search( 1, 5103,19);		//读外机 5104~5122地址的寄存器
 		
 		Modbus_Modify(pMail);				//参数修改
 		vPortFree(pMail);		//动态内存释放

@@ -31,6 +31,16 @@ first lesson\public.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cms
 first lesson\public.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 first lesson\public.o: D:\Keil C51\ARM\ARMCC\Bin\..\include\stddef.h
 first lesson\public.o: ../Inc/FreeRTOSConfig.h
+first lesson\public.o: ..\Src\TraceRecorder\include\trcRecorder.h
+first lesson\public.o: ..\Src\TraceRecorder\config\trcConfig.h
+first lesson\public.o: ..\Src\TraceRecorder\include\trcPortDefines.h
+first lesson\public.o: ..\Src\TraceRecorder\config\trcStreamingConfig.h
+first lesson\public.o: ..\Src\TraceRecorder\include\trcHardwarePort.h
+first lesson\public.o: ..\Src\TraceRecorder\streamports\Jlink_RTT\include\trcStreamingPort.h
+first lesson\public.o: ..\Src\TraceRecorder\streamports\Jlink_RTT\include\SEGGER_RTT_Conf.h
+first lesson\public.o: ..\Src\TraceRecorder\streamports\Jlink_RTT\include\SEGGER_RTT.h
+first lesson\public.o: ..\Src\TraceRecorder\include\trcKernelPort.h
+first lesson\public.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h
 first lesson\public.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h
 first lesson\public.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h
 first lesson\public.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h

@@ -119,6 +119,7 @@ int main(void)
 	  HAL_UART_Receive_DMA(&huart3,UsartType_3.RX_pData, RX_LEN);
 	__HAL_UART_ENABLE_IT(&huart3,UART_IT_IDLE);
 	
+	vTraceEnable(TRC_INIT);
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */
