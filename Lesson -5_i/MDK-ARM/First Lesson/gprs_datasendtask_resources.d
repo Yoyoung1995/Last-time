@@ -57,3 +57,4 @@ first lesson\gprs_datasendtask_resources.o: D:\Keil C51\ARM\ARMCC\Bin\..\include
 first lesson\gprs_datasendtask_resources.o: ../Inc/usart.h
 first lesson\gprs_datasendtask_resources.o: Myself\485Module.h
 first lesson\gprs_datasendtask_resources.o: Myself\public.h
+first lesson\gprs_datasendtask_resources.o: Myself\DS18b20Module.h

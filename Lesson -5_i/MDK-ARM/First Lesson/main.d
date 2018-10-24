@@ -60,3 +60,4 @@ first lesson\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis
 first lesson\main.o: D:\Keil C51\ARM\ARMCC\Bin\..\include\string.h
 first lesson\main.o: .\Myself\485Module.h
 first lesson\main.o: .\Myself\public.h
+first lesson\main.o: .\Myself\DS18b20Module.h

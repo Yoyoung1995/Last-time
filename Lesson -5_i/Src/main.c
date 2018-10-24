@@ -122,6 +122,11 @@ int main(void)
 	__HAL_UART_ENABLE_IT(&huart3,UART_IT_IDLE);
 	
 	vTraceEnable(TRC_INIT);
+	
+	
+//TEST
+BoardRegister[1] = 2;
+BoardRegister[2] = 31;
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */

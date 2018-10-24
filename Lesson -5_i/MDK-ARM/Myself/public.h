@@ -8,6 +8,7 @@
 #include "string.h"
 #include "usart.h"
 #include "485Module.h"
+#include "DS18b20Module.h"
 
 //---------------------------------串口不定长接收 
 #define		RX_LEN  256

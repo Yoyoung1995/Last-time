@@ -56,3 +56,5 @@ first lesson\485module.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/eve
 first lesson\485module.o: D:\Keil C51\ARM\ARMCC\Bin\..\include\string.h
 first lesson\485module.o: ../Inc/usart.h
 first lesson\485module.o: Myself\485Module.h
+first lesson\485module.o: Myself\DS18b20Module.h
+first lesson\485module.o: Myself\public.h

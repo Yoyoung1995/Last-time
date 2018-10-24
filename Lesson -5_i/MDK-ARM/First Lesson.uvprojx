@@ -454,6 +454,11 @@
               <FileType>1</FileType>
               <FilePath>.\Myself\DS18b20Module.c</FilePath>
             </File>
+            <File>
+              <FileName>Temp_Control_Resources.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Myself\Temp_Control_Resources.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

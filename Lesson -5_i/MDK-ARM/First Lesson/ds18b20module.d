@@ -57,4 +57,5 @@ first lesson\ds18b20module.o: D:\Keil C51\ARM\ARMCC\Bin\..\include\string.h
 first lesson\ds18b20module.o: ../Inc/usart.h
 first lesson\ds18b20module.o: Myself\485Module.h
 first lesson\ds18b20module.o: Myself\public.h
+first lesson\ds18b20module.o: Myself\DS18b20Module.h
 first lesson\ds18b20module.o: ../Inc/tim.h
