@@ -3,6 +3,7 @@
 "first lesson\gpio.o"
 "first lesson\dma.o"
 "first lesson\freertos.o"
+"first lesson\tim.o"
 "first lesson\usart.o"
 "first lesson\stm32f1xx_it.o"
 "first lesson\stm32f1xx_hal_msp.o"

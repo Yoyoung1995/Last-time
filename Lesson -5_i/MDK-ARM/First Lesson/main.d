@@ -52,6 +52,7 @@ first lesson\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 first lesson\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h
 first lesson\main.o: ../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h
 first lesson\main.o: ../Inc/dma.h
+first lesson\main.o: ../Inc/tim.h
 first lesson\main.o: ../Inc/usart.h
 first lesson\main.o: ../Inc/gpio.h
 first lesson\main.o: .\Myself\public.h

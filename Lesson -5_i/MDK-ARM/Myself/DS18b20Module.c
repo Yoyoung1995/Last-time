@@ -2,7 +2,7 @@
 //  DQ 替换成 PD10口   STM32双向口
 
 #include "DS18b20Module.h"
-
+#include "tim.h"
 
 //从DS18b20 读出的温度寄存器的值
 static uint8_t tempL=0; 		 
@@ -26,17 +26,12 @@ static uint8_t fg=1;        			//温度正负标志
 *******************************************************************************/
 void delay_us(uint32_t i)
 {
-    uint32_t temp;
-//    SysTick->LOAD=9*i;         //设置重装数值, 72MHZ时
-//    SysTick->CTRL=0X01;         //使能,减到零时无动作，采用外部时钟源
-//    SysTick->VAL=0;                //清零计数器
-//    do
-//    {
-//        temp=SysTick->CTRL;           //读取当前倒计数值
-//    }
-//    while((temp&0x01)&&(!(temp&(1<<16))));     //等待时间到达
-//    SysTick->CTRL=0;    //关闭计数器
-//    SysTick->VAL=0;     //清空计数器
+	__HAL_TIM_SET_COUNTER(&htim7, 0);//htim17
+	__HAL_TIM_ENABLE(&htim7);
+
+	while(__HAL_TIM_GET_COUNTER(&htim7) < (72 * i));//72是系统时钟，这里改
+	/* Disable the Peripheral */
+	__HAL_TIM_DISABLE(&htim7);
 }
 
 
@@ -129,7 +124,7 @@ float ReadTemperature(void)
 		fg=0;      						//读取温度为负时fg=0
 	}
 	
-	Temp = tempH*16 + tempL/16;		//温度换算
+	Temp = tempH*16 + tempL*0.0625;		//温度换算
 	
 	if( fg )
 		Temp = Temp;
