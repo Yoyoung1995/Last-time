@@ -55,6 +55,7 @@
 #include "public.h"
 #include "Far_ModifyTask_Resources.h"
 #include "GPRS_DataSendTask_Resources.h"
+#include "DS18b20Module.h"
 /* USER CODE END Includes */
 
 /* Variables -----------------------------------------------------------------*/
@@ -63,11 +64,14 @@ osThreadId USART1_ServeHandle;
 osThreadId USART2_ServeHandle;
 osThreadId USART3_ServeHandle;
 osThreadId GPRS_DataSendHandle;
+osThreadId Temp_ControlHandle;
 osTimerId Timer_GPRS_DataSendHandle;
+osTimerId Timer_Temp_ControlHandle;
 osSemaphoreId bSem_USART1_ServeHandle;
 osSemaphoreId bSem_USART2_ServeHandle;
 osSemaphoreId bSem_USART3_ServeHandle;
 osSemaphoreId bSem_GPRS_DataSendHandle;
+osSemaphoreId bSem_Temp_ControlHandle;
 
 /* USER CODE BEGIN Variables */
 
@@ -79,7 +83,9 @@ void USART1_Serve_Task(void const * argument);
 void USART2_Serve_Task(void const * argument);
 void USART3_Serve_Task(void const * argument);
 void GPRS_DataSendTask(void const * argument);
+void Temp_ControlTask(void const * argument);
 void Timer_GPRS_DataSendCallback(void const * argument);
+void Timer_Temp_ControlCallback(void const * argument);
 
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
 
@@ -117,6 +123,10 @@ void MX_FREERTOS_Init(void) {
   osSemaphoreDef(bSem_GPRS_DataSend);
   bSem_GPRS_DataSendHandle = osSemaphoreCreate(osSemaphore(bSem_GPRS_DataSend), 1);
 
+  /* definition and creation of bSem_Temp_Control */
+  osSemaphoreDef(bSem_Temp_Control);
+  bSem_Temp_ControlHandle = osSemaphoreCreate(osSemaphore(bSem_Temp_Control), 1);
+
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
   /* USER CODE END RTOS_SEMAPHORES */
@@ -126,9 +136,14 @@ void MX_FREERTOS_Init(void) {
   osTimerDef(Timer_GPRS_DataSend, Timer_GPRS_DataSendCallback);
   Timer_GPRS_DataSendHandle = osTimerCreate(osTimer(Timer_GPRS_DataSend), osTimerPeriodic, NULL);
 
+  /* definition and creation of Timer_Temp_Control */
+  osTimerDef(Timer_Temp_Control, Timer_Temp_ControlCallback);
+  Timer_Temp_ControlHandle = osTimerCreate(osTimer(Timer_Temp_Control), osTimerPeriodic, NULL);
+
   /* USER CODE BEGIN RTOS_TIMERS */
   /* start timers, add new ones, ... */
 	osTimerStart(Timer_GPRS_DataSendHandle,5000);
+	osTimerStart(Timer_Temp_ControlHandle,1000);
   /* USER CODE END RTOS_TIMERS */
 
   /* Create the thread(s) */
@@ -151,6 +166,10 @@ void MX_FREERTOS_Init(void) {
   /* definition and creation of GPRS_DataSend */
   osThreadDef(GPRS_DataSend, GPRS_DataSendTask, osPriorityNormal, 0, 128);
   GPRS_DataSendHandle = osThreadCreate(osThread(GPRS_DataSend), NULL);
+
+  /* definition and creation of Temp_Control */
+  osThreadDef(Temp_Control, Temp_ControlTask, osPriorityNormal, 0, 128);
+  Temp_ControlHandle = osThreadCreate(osThread(Temp_Control), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
@@ -328,6 +347,8 @@ void GPRS_DataSendTask(void const * argument)
 									&pMail,
 									500);	   
 		
+		osDelay(30);		//( 给数字电表留点处理时间，因为 否则 在数字电表看来，总线上的两串数据帧是连在一起的 )
+		
 		Modbus_03_Search( 63, 0x2000,16);		//读电表 2000H~200FH地址的寄存器
 		
 		Modbus_Modify(pMail);					//参数修改
@@ -352,9 +373,24 @@ void GPRS_DataSendTask(void const * argument)
 		vPortFree(pMail);		//动态内存释放
 		pMail = NULL;		
 
-					//向GPRS上传节能控制板寄存器信息
+		GPRS_Send(theMAC,DeviceNum);			//向GPRS上传节能控制板寄存器信息
   }
   /* USER CODE END GPRS_DataSendTask */
+}
+
+/* Temp_ControlTask function */
+void Temp_ControlTask(void const * argument)
+{
+  /* USER CODE BEGIN Temp_ControlTask */
+  /* Infinite loop */
+  for(;;)
+  {
+		osSemaphoreWait(bSem_Temp_ControlHandle,osWaitForever);
+		DS18b20_FinalTemp = ReadTemperature();
+		//温度控制
+		
+  }
+  /* USER CODE END Temp_ControlTask */
 }
 
 /* Timer_GPRS_DataSendCallback function */
@@ -363,6 +399,14 @@ void Timer_GPRS_DataSendCallback(void const * argument)
   /* USER CODE BEGIN Timer_GPRS_DataSendCallback */
   osSemaphoreRelease(bSem_GPRS_DataSendHandle);
   /* USER CODE END Timer_GPRS_DataSendCallback */
+}
+
+/* Timer_Temp_ControlCallback function */
+void Timer_Temp_ControlCallback(void const * argument)
+{
+  /* USER CODE BEGIN Timer_Temp_ControlCallback */
+  osSemaphoreRelease(bSem_Temp_ControlHandle);
+  /* USER CODE END Timer_Temp_ControlCallback */
 }
 
 /* USER CODE BEGIN Application */

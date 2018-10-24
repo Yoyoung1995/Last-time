@@ -11,16 +11,20 @@
 //串口2 485信息发送函数
 void USART2_485_Send(uint8_t * pBuff, uint16_t len)
 {
+	
 	HAL_GPIO_WritePin(GPIOD,GPIO_PIN_4,GPIO_PIN_SET);
 	HAL_UART_Transmit(&huart2,pBuff,len,osWaitForever);
 	HAL_GPIO_WritePin(GPIOD,GPIO_PIN_4,GPIO_PIN_RESET);
+	
 }
 
 
 //串口3 485信息发送函数
 void USART3_485_Send(uint8_t * pBuff, uint16_t len)
 {
+	
 	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_8,GPIO_PIN_SET);
 	HAL_UART_Transmit(&huart3,pBuff,len,osWaitForever);
 	HAL_GPIO_WritePin(GPIOA,GPIO_PIN_8,GPIO_PIN_RESET);
+	
 }

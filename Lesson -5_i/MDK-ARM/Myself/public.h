@@ -22,6 +22,10 @@ typedef struct{
 
 extern uint16_t BoardRegister[REGISTER_SIZE];
 
+//节能控制板默认设备编号
+extern uint8_t DeviceNum ;  
+//节能控制板默认网卡MAC地址
+extern uint8_t theMAC[6] ;
 
 
 extern USART_RECEIVETYPE UsartType_1;

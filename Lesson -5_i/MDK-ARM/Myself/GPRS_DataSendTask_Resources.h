@@ -28,4 +28,9 @@ extern void Modbus_03_Search(uint8_t SlaveAddr, uint16_t StartingAddr, uint16_t 
 //  							2---  功能码错误
 //                3---  返回字节长度错误
 extern uint8_t Modbus_Modify(USART_RECEIVETYPE * pMail);
+
+//向服务器回传节能控制板寄存器数据
+//MAC : 当前网卡地址MAC
+//DevNum : 设备编号
+extern void GPRS_Send(uint8_t * MAC, uint8_t DevNum );
 #endif

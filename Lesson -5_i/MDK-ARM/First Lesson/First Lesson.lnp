@@ -11,6 +11,7 @@
 "first lesson\far_modifytask_resources.o"
 "first lesson\gprs_datasendtask_resources.o"
 "first lesson\485module.o"
+"first lesson\ds18b20module.o"
 "first lesson\stm32f1xx_hal_gpio_ex.o"
 "first lesson\stm32f1xx_hal_tim.o"
 "first lesson\stm32f1xx_hal_tim_ex.o"

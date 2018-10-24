@@ -74,6 +74,9 @@ USART_RECEIVETYPE UsartType_3 = {0};
 
 //节能控制板寄存器
 uint16_t BoardRegister[REGISTER_SIZE] = {0};
-
+//节能控制板默认设备编号
+uint8_t DeviceNum = 1;  
+//节能控制板默认网卡MAC地址
+uint8_t theMAC[6] = {0};
 
 //------------------ Public Variables : End

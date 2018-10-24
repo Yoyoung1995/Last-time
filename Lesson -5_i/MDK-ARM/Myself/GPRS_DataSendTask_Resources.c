@@ -127,3 +127,38 @@ uint8_t Modbus_Modify(USART_RECEIVETYPE * pMail)
 	}
 	return return_Data;
 }
+
+
+//向服务器回传节能控制板寄存器数据
+//MAC : 当前网卡地址MAC
+//DevNum : 设备编号
+void GPRS_Send(uint8_t * MAC, uint8_t DevNum )
+{
+	uint8_t Buf[128] = {0};
+	uint16_t myCRC = 0;
+	
+	Buf[0] = 0xaa;			//包头
+	Buf[1] = 0x55;
+	Buf[2] = 2;					//对象
+	for(uint8_t i=0;i<6;i++)  //设备唯一标识号MN
+	{
+	Buf[3+i] = *(MAC+i);
+	}	//Buf[8]
+	Buf[9] = DevNum;    //设备编号
+	Buf[10]= 0x4D;	//数据内容长度  37*2+3 = 77
+	Buf[11]= 0x00;	
+	Buf[12]= 0x01;	//数据内容
+	Buf[13]= 0x00;	
+	Buf[14]= 0x00;
+	for(uint8_t j=0;j<37;j++ )
+	{
+		Buf[15+2*j] = BoardRegister[j]%256; 
+		Buf[16+2*j] = BoardRegister[j]>>8;
+	}//Buf[88]
+	myCRC = gprsCRC(&Buf[2],87); //CRC校验   10+ 数据内容长度
+	Buf[89] = myCRC%256;
+	Buf[90] = myCRC>>8;
+	Buf[91] = 0x3a;	//包尾
+	
+	USART3_485_Send(Buf,92);
+}

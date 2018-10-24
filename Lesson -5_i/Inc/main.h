@@ -59,6 +59,8 @@
 
 /* Private define ------------------------------------------------------------*/
 
+#define DS18b20_DQ_Pin GPIO_PIN_10
+#define DS18b20_DQ_GPIO_Port GPIOD
 #define IO_485_USART3_Pin GPIO_PIN_8
 #define IO_485_USART3_GPIO_Port GPIOA
 #define IO_485_USART2_Pin GPIO_PIN_4
