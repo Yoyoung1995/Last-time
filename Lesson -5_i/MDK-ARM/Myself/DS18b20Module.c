@@ -108,15 +108,20 @@ uint8_t ReadOneChar(void)  			//Ö÷»úÊı¾İÏßÏÈ´Ó¸ßÀ­ÖÁµÍµçÆ½1usÒÔÉÏ£¬ÔÙÊ¹Êı¾İÏßÉıÎ
 float ReadTemperature(void) 
 { 
 	float  Temp = 0.0;
+	
+	taskENTER_CRITICAL();
 	Init_DS18B20(); 					//³õÊ¼»¯
 	WriteOneChar(0xcc); 				//Ìø¹ı¶ÁĞòÁĞºÅµÄ²Ù×÷
 	WriteOneChar(0x44); 				//Æô¶¯ÎÂ¶È×ª»»
+	taskEXIT_CRITICAL();	
 	osDelay(750); 						//×ª»»ĞèÒªÒ»µãÊ±¼ä£¬ÑÓÊ± 750ms
+	taskENTER_CRITICAL();
 	Init_DS18B20(); 					//³õÊ¼»¯
 	WriteOneChar(0xcc); 				//Ìø¹ı¶ÁĞòÁĞºÅµÄ²Ù×÷ 
 	WriteOneChar(0xbe); 				//¶ÁÎÂ¶È¼Ä´æÆ÷£¨Í·Á½¸öÖµ·Ö±ğÎªÎÂ¶ÈµÄµÍÎ»ºÍ¸ßÎ»£© 
 	tempL=ReadOneChar(); 				//¶Á³öÎÂ¶ÈµÄµÍÎ»LSB
 	tempH=ReadOneChar(); 				//¶Á³öÎÂ¶ÈµÄ¸ßÎ»MSB	
+	taskEXIT_CRITICAL();
 	if(tempH>0x7f)      				//×î¸ßÎ»Îª1Ê±ÎÂ¶ÈÊÇ¸º
 	{
 		tempL=~tempL;					//²¹Âë×ª»»£¬È¡·´¼ÓÒ»
@@ -134,8 +139,5 @@ float ReadTemperature(void)
 	fg = 1;		//»Ö¸´Ä¬ÈÏ
 	
 	return Temp;
-//	sdata = tempL/16+tempH*16;      	//ÕûÊı²¿·Ö
-//	xiaoshu1 = (tempL&0x0f)*10/16; 		//Ğ¡ÊıµÚÒ»Î»
-//	xiaoshu2 = (tempL&0x0f)*100/16%10;	//Ğ¡ÊıµÚ¶şÎ»
-//	xiaoshu=xiaoshu1*10+xiaoshu2; 		//Ğ¡ÊıÁ½Î»
+
 }
