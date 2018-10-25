@@ -58,6 +58,7 @@ first lesson\freertos.o: ../Inc/usart.h
 first lesson\freertos.o: .\Myself\485Module.h
 first lesson\freertos.o: .\Myself\public.h
 first lesson\freertos.o: .\Myself\DS18b20Module.h
+first lesson\freertos.o: .\Myself\BoardSet_Parameters.h
 first lesson\freertos.o: .\Myself\Far_ModifyTask_Resources.h
 first lesson\freertos.o: .\Myself\GPRS_DataSendTask_Resources.h
-first lesson\freertos.o: .\Myself\Temp_Control_Resources.h
+first lesson\freertos.o: .\Myself\Temp_ControlTask_Resources.h

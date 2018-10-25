@@ -57,3 +57,4 @@ first lesson\public.o: ../Inc/usart.h
 first lesson\public.o: Myself\485Module.h
 first lesson\public.o: Myself\public.h
 first lesson\public.o: Myself\DS18b20Module.h
+first lesson\public.o: Myself\BoardSet_Parameters.h

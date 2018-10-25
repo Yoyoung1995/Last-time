@@ -59,6 +59,18 @@
 
 /* Private define ------------------------------------------------------------*/
 
+#define BoMa_1_Pin GPIO_PIN_0
+#define BoMa_1_GPIO_Port GPIOA
+#define BoMa_2_Pin GPIO_PIN_1
+#define BoMa_2_GPIO_Port GPIOA
+#define BoMa_3_Pin GPIO_PIN_2
+#define BoMa_3_GPIO_Port GPIOA
+#define BoMa_4_Pin GPIO_PIN_3
+#define BoMa_4_GPIO_Port GPIOA
+#define TiaoXian_Hot_Pin GPIO_PIN_4
+#define TiaoXian_Hot_GPIO_Port GPIOA
+#define TiaoXian_Cold_Pin GPIO_PIN_5
+#define TiaoXian_Cold_GPIO_Port GPIOA
 #define DS18b20_DQ_Pin GPIO_PIN_10
 #define DS18b20_DQ_GPIO_Port GPIOD
 #define IO_485_USART3_Pin GPIO_PIN_8

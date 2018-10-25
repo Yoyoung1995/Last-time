@@ -1,6 +1,6 @@
 //一个任务对应一组资源 ： 信号量、消息队列、事件标志组 等
 
-#include "Temp_Control_Resources.h"
+#include "Temp_ControlTask_Resources.h"
 
 
 

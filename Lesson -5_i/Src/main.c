@@ -122,11 +122,13 @@ int main(void)
 	__HAL_UART_ENABLE_IT(&huart3,UART_IT_IDLE);
 	
 	vTraceEnable(TRC_INIT);
-	
+		
+	Board_Init();		//根据跳线、拨码 进行参数初始化
 	
 //TEST
 BoardRegister[1] = 2;
 BoardRegister[2] = 31;
+
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */

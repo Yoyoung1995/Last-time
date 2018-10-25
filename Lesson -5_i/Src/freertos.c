@@ -56,7 +56,7 @@
 #include "Far_ModifyTask_Resources.h"
 #include "GPRS_DataSendTask_Resources.h"
 #include "DS18b20Module.h"
-#include "Temp_Control_Resources.h"
+#include "Temp_ControlTask_Resources.h"
 /* USER CODE END Includes */
 
 /* Variables -----------------------------------------------------------------*/
@@ -388,7 +388,7 @@ void Temp_ControlTask(void const * argument)
   {
 		osSemaphoreWait(bSem_Temp_ControlHandle,osWaitForever);
 		DS18b20_FinalTemp = ReadTemperature();
-		//温度控制
+		//恒温控制
 		switch(BoardRegister[1])
 		{
 			case 1 :				//关机
@@ -403,7 +403,12 @@ void Temp_ControlTask(void const * argument)
 			default : 			
 				break;
 		}
-		
+		//电能表清零
+		if( BoardRegister[3])
+		{
+			Modbus_SetRegister(63,2,1);
+		}
+		//done
   }
   /* USER CODE END Temp_ControlTask */
 }

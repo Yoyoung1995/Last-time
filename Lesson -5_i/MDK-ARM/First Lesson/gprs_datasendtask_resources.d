@@ -58,3 +58,4 @@ first lesson\gprs_datasendtask_resources.o: ../Inc/usart.h
 first lesson\gprs_datasendtask_resources.o: Myself\485Module.h
 first lesson\gprs_datasendtask_resources.o: Myself\public.h
 first lesson\gprs_datasendtask_resources.o: Myself\DS18b20Module.h
+first lesson\gprs_datasendtask_resources.o: Myself\BoardSet_Parameters.h
