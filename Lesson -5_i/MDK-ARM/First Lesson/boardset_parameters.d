@@ -59,3 +59,4 @@ first lesson\boardset_parameters.o: Myself\485Module.h
 first lesson\boardset_parameters.o: Myself\public.h
 first lesson\boardset_parameters.o: Myself\DS18b20Module.h
 first lesson\boardset_parameters.o: Myself\BoardSet_Parameters.h
+first lesson\boardset_parameters.o: Myself\Elfin-EG11_GPRS_Module.h

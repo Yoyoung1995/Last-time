@@ -464,6 +464,11 @@
               <FileType>1</FileType>
               <FilePath>.\Myself\BoardSet_Parameters.c</FilePath>
             </File>
+            <File>
+              <FileName>Elfin-EG11_GPRS_Module.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Myself\Elfin-EG11_GPRS_Module.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>

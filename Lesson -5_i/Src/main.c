@@ -126,9 +126,11 @@ int main(void)
 	Board_Init();		//根据跳线、拨码 进行参数初始化
 	
 //TEST
-BoardRegister[1] = 2;
-BoardRegister[2] = 31;
-
+BoardRegister[1] = 3;			//
+BoardRegister[2] = 18;		//
+	
+	GPRS_Init();
+	
   /* USER CODE END 2 */
 
   /* Call init function for freertos objects (in freertos.c) */

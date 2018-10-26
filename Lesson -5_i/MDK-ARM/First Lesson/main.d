@@ -62,3 +62,4 @@ first lesson\main.o: .\Myself\485Module.h
 first lesson\main.o: .\Myself\public.h
 first lesson\main.o: .\Myself\DS18b20Module.h
 first lesson\main.o: .\Myself\BoardSet_Parameters.h
+first lesson\main.o: .\Myself\Elfin-EG11_GPRS_Module.h

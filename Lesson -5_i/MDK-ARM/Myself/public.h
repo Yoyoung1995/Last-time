@@ -10,6 +10,7 @@
 #include "485Module.h"
 #include "DS18b20Module.h"
 #include "BoardSet_Parameters.h"
+#include "Elfin-EG11_GPRS_Module.h"
 
 //---------------------------------串口不定长接收 
 #define		RX_LEN  256

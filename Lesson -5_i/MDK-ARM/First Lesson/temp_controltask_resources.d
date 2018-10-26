@@ -59,3 +59,4 @@ first lesson\temp_controltask_resources.o: Myself\485Module.h
 first lesson\temp_controltask_resources.o: Myself\public.h
 first lesson\temp_controltask_resources.o: Myself\DS18b20Module.h
 first lesson\temp_controltask_resources.o: Myself\BoardSet_Parameters.h
+first lesson\temp_controltask_resources.o: Myself\Elfin-EG11_GPRS_Module.h

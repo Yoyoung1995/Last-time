@@ -1,5 +1,5 @@
 Dependencies for Project 'First Lesson', Target 'First Lesson': (DO NOT MODIFY !)
-F (../Src/main.c)(0x5BD18531)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I .\Myself -I ..\Src\TraceRecorder\config -I ..\Src\TraceRecorder\include -I ..\Src\TraceRecorder\streamports\Jlink_RTT\include-I"E:\Last-time\Lesson -5_i\MDK-ARM\RTE\_First_Lesson"-I"D:\Keil C51\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include"-I"D:\Keil C51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o "first lesson\main.o" --omf_browse "first lesson\main.crf" --depend "first lesson\main.d")
+F (../Src/main.c)(0x5BD2AC91)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I .\Myself -I ..\Src\TraceRecorder\config -I ..\Src\TraceRecorder\include -I ..\Src\TraceRecorder\streamports\Jlink_RTT\include-I"E:\Last-time\Lesson -5_i\MDK-ARM\RTE\_First_Lesson"-I"D:\Keil C51\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include"-I"D:\Keil C51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o "first lesson\main.o" --omf_browse "first lesson\main.crf" --depend "first lesson\main.d")
 I (../Inc/main.h)(0x5BD1824B)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B96827E)
 I (../Inc/stm32f1xx_hal_conf.h)(0x5BD1824B)
@@ -54,11 +54,12 @@ I (../Inc/dma.h)(0x5BD1824A)
 I (../Inc/tim.h)(0x5BD1824B)
 I (../Inc/usart.h)(0x5BD1824B)
 I (../Inc/gpio.h)(0x5BD1824A)
-I (.\Myself\public.h)(0x5BD184D0)
+I (.\Myself\public.h)(0x5BD27AF8)
 I (D:\Keil C51\ARM\ARMCC\include\string.h)(0x57F606B8)
 I (.\Myself\485Module.h)(0x5BC98C9D)
 I (.\Myself\DS18b20Module.h)(0x5BCFE120)
 I (.\Myself\BoardSet_Parameters.h)(0x5BD1849E)
+I (.\Myself\Elfin-EG11_GPRS_Module.h)(0x5BD2646E)
 F (../Src/gpio.c)(0x5BD1824A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I .\Myself -I ..\Src\TraceRecorder\config -I ..\Src\TraceRecorder\include -I ..\Src\TraceRecorder\streamports\Jlink_RTT\include-I"E:\Last-time\Lesson -5_i\MDK-ARM\RTE\_First_Lesson"-I"D:\Keil C51\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include"-I"D:\Keil C51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o "first lesson\gpio.o" --omf_browse "first lesson\gpio.crf" --depend "first lesson\gpio.d")
 I (../Inc/gpio.h)(0x5BD1824A)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B96827E)
@@ -115,7 +116,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5B96827E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x5B96827E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x5B96827E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x5B96827E)
-F (../Src/freertos.c)(0x5BD1824B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I .\Myself -I ..\Src\TraceRecorder\config -I ..\Src\TraceRecorder\include -I ..\Src\TraceRecorder\streamports\Jlink_RTT\include-I"E:\Last-time\Lesson -5_i\MDK-ARM\RTE\_First_Lesson"-I"D:\Keil C51\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include"-I"D:\Keil C51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o "first lesson\freertos.o" --omf_browse "first lesson\freertos.crf" --depend "first lesson\freertos.d")
+F (../Src/freertos.c)(0x5BD2B6E9)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I .\Myself -I ..\Src\TraceRecorder\config -I ..\Src\TraceRecorder\include -I ..\Src\TraceRecorder\streamports\Jlink_RTT\include-I"E:\Last-time\Lesson -5_i\MDK-ARM\RTE\_First_Lesson"-I"D:\Keil C51\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include"-I"D:\Keil C51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o "first lesson\freertos.o" --omf_browse "first lesson\freertos.crf" --depend "first lesson\freertos.d")
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B968247)
 I (D:\Keil C51\ARM\ARMCC\include\stddef.h)(0x57F606B8)
 I (D:\Keil C51\ARM\ARMCC\include\stdint.h)(0x57F606B8)
@@ -166,12 +167,13 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x5B968247)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x5B968247)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x5B968247)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x5B968247)
-I (.\Myself\public.h)(0x5BD184D0)
+I (.\Myself\public.h)(0x5BD27AF8)
 I (D:\Keil C51\ARM\ARMCC\include\string.h)(0x57F606B8)
 I (../Inc/usart.h)(0x5BD1824B)
 I (.\Myself\485Module.h)(0x5BC98C9D)
 I (.\Myself\DS18b20Module.h)(0x5BCFE120)
 I (.\Myself\BoardSet_Parameters.h)(0x5BD1849E)
+I (.\Myself\Elfin-EG11_GPRS_Module.h)(0x5BD2646E)
 I (.\Myself\Far_ModifyTask_Resources.h)(0x5BC805FD)
 I (.\Myself\GPRS_DataSendTask_Resources.h)(0x5BCEB3E6)
 I (.\Myself\Temp_ControlTask_Resources.h)(0x5BD01B1F)
@@ -285,12 +287,13 @@ I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x5B968247)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x5B968247)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x5B968247)
 I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x5B968247)
-I (.\Myself\public.h)(0x5BD184D0)
+I (.\Myself\public.h)(0x5BD27AF8)
 I (D:\Keil C51\ARM\ARMCC\include\string.h)(0x57F606B8)
 I (../Inc/usart.h)(0x5BD1824B)
 I (.\Myself\485Module.h)(0x5BC98C9D)
 I (.\Myself\DS18b20Module.h)(0x5BCFE120)
 I (.\Myself\BoardSet_Parameters.h)(0x5BD1849E)
+I (.\Myself\Elfin-EG11_GPRS_Module.h)(0x5BD2646E)
 F (../Src/stm32f1xx_hal_msp.c)(0x5BD1824B)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I .\Myself -I ..\Src\TraceRecorder\config -I ..\Src\TraceRecorder\include -I ..\Src\TraceRecorder\streamports\Jlink_RTT\include-I"E:\Last-time\Lesson -5_i\MDK-ARM\RTE\_First_Lesson"-I"D:\Keil C51\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include"-I"D:\Keil C51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o "first lesson\stm32f1xx_hal_msp.o" --omf_browse "first lesson\stm32f1xx_hal_msp.crf" --depend "first lesson\stm32f1xx_hal_msp.d")
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B96827E)
 I (../Inc/stm32f1xx_hal_conf.h)(0x5BD1824B)
@@ -346,7 +349,7 @@ I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x5B96827E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x5B96827E)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x5B96827E)
 F (.\Myself\public.c)(0x5BCEB44A)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I .\Myself -I ..\Src\TraceRecorder\config -I ..\Src\TraceRecorder\include -I ..\Src\TraceRecorder\streamports\Jlink_RTT\include-I"E:\Last-time\Lesson -5_i\MDK-ARM\RTE\_First_Lesson"-I"D:\Keil C51\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include"-I"D:\Keil C51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o "first lesson\public.o" --omf_browse "first lesson\public.crf" --depend "first lesson\public.d")
-I (Myself\public.h)(0x5BD184D0)
+I (Myself\public.h)(0x5BD27AF8)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B96827E)
 I (../Inc/stm32f1xx_hal_conf.h)(0x5BD1824B)
 I (../Inc/main.h)(0x5BD1824B)
@@ -402,9 +405,10 @@ I (../Inc/usart.h)(0x5BD1824B)
 I (Myself\485Module.h)(0x5BC98C9D)
 I (Myself\DS18b20Module.h)(0x5BCFE120)
 I (Myself\BoardSet_Parameters.h)(0x5BD1849E)
+I (Myself\Elfin-EG11_GPRS_Module.h)(0x5BD2646E)
 F (.\Myself\Far_ModifyTask_Resources.c)(0x5BC825C5)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I .\Myself -I ..\Src\TraceRecorder\config -I ..\Src\TraceRecorder\include -I ..\Src\TraceRecorder\streamports\Jlink_RTT\include-I"E:\Last-time\Lesson -5_i\MDK-ARM\RTE\_First_Lesson"-I"D:\Keil C51\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include"-I"D:\Keil C51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o "first lesson\far_modifytask_resources.o" --omf_browse "first lesson\far_modifytask_resources.crf" --depend "first lesson\far_modifytask_resources.d")
 I (Myself\Far_ModifyTask_Resources.h)(0x5BC805FD)
-I (Myself\public.h)(0x5BD184D0)
+I (Myself\public.h)(0x5BD27AF8)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B96827E)
 I (../Inc/stm32f1xx_hal_conf.h)(0x5BD1824B)
 I (../Inc/main.h)(0x5BD1824B)
@@ -460,9 +464,10 @@ I (../Inc/usart.h)(0x5BD1824B)
 I (Myself\485Module.h)(0x5BC98C9D)
 I (Myself\DS18b20Module.h)(0x5BCFE120)
 I (Myself\BoardSet_Parameters.h)(0x5BD1849E)
+I (Myself\Elfin-EG11_GPRS_Module.h)(0x5BD2646E)
 F (.\Myself\GPRS_DataSendTask_Resources.c)(0x5BCEBBFF)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I .\Myself -I ..\Src\TraceRecorder\config -I ..\Src\TraceRecorder\include -I ..\Src\TraceRecorder\streamports\Jlink_RTT\include-I"E:\Last-time\Lesson -5_i\MDK-ARM\RTE\_First_Lesson"-I"D:\Keil C51\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include"-I"D:\Keil C51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o "first lesson\gprs_datasendtask_resources.o" --omf_browse "first lesson\gprs_datasendtask_resources.crf" --depend "first lesson\gprs_datasendtask_resources.d")
 I (Myself\GPRS_DataSendTask_Resources.h)(0x5BCEB3E6)
-I (Myself\public.h)(0x5BD184D0)
+I (Myself\public.h)(0x5BD27AF8)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B96827E)
 I (../Inc/stm32f1xx_hal_conf.h)(0x5BD1824B)
 I (../Inc/main.h)(0x5BD1824B)
@@ -518,9 +523,10 @@ I (../Inc/usart.h)(0x5BD1824B)
 I (Myself\485Module.h)(0x5BC98C9D)
 I (Myself\DS18b20Module.h)(0x5BCFE120)
 I (Myself\BoardSet_Parameters.h)(0x5BD1849E)
+I (Myself\Elfin-EG11_GPRS_Module.h)(0x5BD2646E)
 F (.\Myself\485Module.c)(0x5BD168C9)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I .\Myself -I ..\Src\TraceRecorder\config -I ..\Src\TraceRecorder\include -I ..\Src\TraceRecorder\streamports\Jlink_RTT\include-I"E:\Last-time\Lesson -5_i\MDK-ARM\RTE\_First_Lesson"-I"D:\Keil C51\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include"-I"D:\Keil C51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o "first lesson\485module.o" --omf_browse "first lesson\485module.crf" --depend "first lesson\485module.d")
 I (Myself\485Module.h)(0x5BC98C9D)
-I (Myself\public.h)(0x5BD184D0)
+I (Myself\public.h)(0x5BD27AF8)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B96827E)
 I (../Inc/stm32f1xx_hal_conf.h)(0x5BD1824B)
 I (../Inc/main.h)(0x5BD1824B)
@@ -575,9 +581,10 @@ I (D:\Keil C51\ARM\ARMCC\include\string.h)(0x57F606B8)
 I (../Inc/usart.h)(0x5BD1824B)
 I (Myself\DS18b20Module.h)(0x5BCFE120)
 I (Myself\BoardSet_Parameters.h)(0x5BD1849E)
+I (Myself\Elfin-EG11_GPRS_Module.h)(0x5BD2646E)
 F (.\Myself\DS18b20Module.c)(0x5BD15CAB)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I .\Myself -I ..\Src\TraceRecorder\config -I ..\Src\TraceRecorder\include -I ..\Src\TraceRecorder\streamports\Jlink_RTT\include-I"E:\Last-time\Lesson -5_i\MDK-ARM\RTE\_First_Lesson"-I"D:\Keil C51\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include"-I"D:\Keil C51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o "first lesson\ds18b20module.o" --omf_browse "first lesson\ds18b20module.crf" --depend "first lesson\ds18b20module.d")
 I (Myself\DS18b20Module.h)(0x5BCFE120)
-I (Myself\public.h)(0x5BD184D0)
+I (Myself\public.h)(0x5BD27AF8)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B96827E)
 I (../Inc/stm32f1xx_hal_conf.h)(0x5BD1824B)
 I (../Inc/main.h)(0x5BD1824B)
@@ -632,10 +639,11 @@ I (D:\Keil C51\ARM\ARMCC\include\string.h)(0x57F606B8)
 I (../Inc/usart.h)(0x5BD1824B)
 I (Myself\485Module.h)(0x5BC98C9D)
 I (Myself\BoardSet_Parameters.h)(0x5BD1849E)
+I (Myself\Elfin-EG11_GPRS_Module.h)(0x5BD2646E)
 I (../Inc/tim.h)(0x5BD1824B)
 F (.\Myself\Temp_ControlTask_Resources.c)(0x5BD17F22)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I .\Myself -I ..\Src\TraceRecorder\config -I ..\Src\TraceRecorder\include -I ..\Src\TraceRecorder\streamports\Jlink_RTT\include-I"E:\Last-time\Lesson -5_i\MDK-ARM\RTE\_First_Lesson"-I"D:\Keil C51\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include"-I"D:\Keil C51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o "first lesson\temp_controltask_resources.o" --omf_browse "first lesson\temp_controltask_resources.crf" --depend "first lesson\temp_controltask_resources.d")
 I (Myself\Temp_ControlTask_Resources.h)(0x5BD01B1F)
-I (Myself\public.h)(0x5BD184D0)
+I (Myself\public.h)(0x5BD27AF8)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B96827E)
 I (../Inc/stm32f1xx_hal_conf.h)(0x5BD1824B)
 I (../Inc/main.h)(0x5BD1824B)
@@ -691,9 +699,10 @@ I (../Inc/usart.h)(0x5BD1824B)
 I (Myself\485Module.h)(0x5BC98C9D)
 I (Myself\DS18b20Module.h)(0x5BCFE120)
 I (Myself\BoardSet_Parameters.h)(0x5BD1849E)
+I (Myself\Elfin-EG11_GPRS_Module.h)(0x5BD2646E)
 F (.\Myself\BoardSet_Parameters.c)(0x5BD18566)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I .\Myself -I ..\Src\TraceRecorder\config -I ..\Src\TraceRecorder\include -I ..\Src\TraceRecorder\streamports\Jlink_RTT\include-I"E:\Last-time\Lesson -5_i\MDK-ARM\RTE\_First_Lesson"-I"D:\Keil C51\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include"-I"D:\Keil C51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o "first lesson\boardset_parameters.o" --omf_browse "first lesson\boardset_parameters.crf" --depend "first lesson\boardset_parameters.d")
 I (Myself\BoardSet_Parameters.h)(0x5BD1849E)
-I (Myself\public.h)(0x5BD184D0)
+I (Myself\public.h)(0x5BD27AF8)
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B96827E)
 I (../Inc/stm32f1xx_hal_conf.h)(0x5BD1824B)
 I (../Inc/main.h)(0x5BD1824B)
@@ -748,6 +757,65 @@ I (D:\Keil C51\ARM\ARMCC\include\string.h)(0x57F606B8)
 I (../Inc/usart.h)(0x5BD1824B)
 I (Myself\485Module.h)(0x5BC98C9D)
 I (Myself\DS18b20Module.h)(0x5BCFE120)
+I (Myself\Elfin-EG11_GPRS_Module.h)(0x5BD2646E)
+F (.\Myself\Elfin-EG11_GPRS_Module.c)(0x5BD29FFE)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I .\Myself -I ..\Src\TraceRecorder\config -I ..\Src\TraceRecorder\include -I ..\Src\TraceRecorder\streamports\Jlink_RTT\include-I"E:\Last-time\Lesson -5_i\MDK-ARM\RTE\_First_Lesson"-I"D:\Keil C51\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include"-I"D:\Keil C51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o "first lesson\elfin-eg11_gprs_module.o" --omf_browse "first lesson\elfin-eg11_gprs_module.crf" --depend "first lesson\elfin-eg11_gprs_module.d")
+I (Myself\Elfin-EG11_GPRS_Module.h)(0x5BD2646E)
+I (Myself\public.h)(0x5BD27AF8)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B96827E)
+I (../Inc/stm32f1xx_hal_conf.h)(0x5BD1824B)
+I (../Inc/main.h)(0x5BD1824B)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h)(0x5B96827E)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h)(0x5B96827E)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h)(0x5B968242)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xe.h)(0x5B968242)
+I (../Drivers/CMSIS/Include/core_cm3.h)(0x5B968245)
+I (D:\Keil C51\ARM\ARMCC\include\stdint.h)(0x57F606B8)
+I (../Drivers/CMSIS/Include/core_cmInstr.h)(0x5B968245)
+I (../Drivers/CMSIS/Include/cmsis_armcc.h)(0x5B968245)
+I (../Drivers/CMSIS/Include/core_cmFunc.h)(0x5B968245)
+I (../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h)(0x5B968242)
+I (D:\Keil C51\ARM\ARMCC\include\stdio.h)(0x57F606B8)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h)(0x5B96827E)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h)(0x5B96827E)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h)(0x5B96827E)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h)(0x5B96827E)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h)(0x5B96827E)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h)(0x5B96827E)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h)(0x5B96827E)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h)(0x5B96827E)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h)(0x5B96827E)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h)(0x5B96827E)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h)(0x5B96827E)
+I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h)(0x5B96827E)
+I (../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h)(0x5B968247)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h)(0x5B968247)
+I (D:\Keil C51\ARM\ARMCC\include\stddef.h)(0x57F606B8)
+I (../Inc/FreeRTOSConfig.h)(0x5BD1824B)
+I (..\Src\TraceRecorder\include\trcRecorder.h)(0x5BBDF97A)
+I (..\Src\TraceRecorder\config\trcConfig.h)(0x5BCD8E05)
+I (..\Src\TraceRecorder\include\trcPortDefines.h)(0x5BBDF97A)
+I (..\Src\TraceRecorder\config\trcStreamingConfig.h)(0x5BBDF97A)
+I (..\Src\TraceRecorder\include\trcHardwarePort.h)(0x5BBDF97A)
+I (..\Src\TraceRecorder\streamports\Jlink_RTT\include\trcStreamingPort.h)(0x5BBDF97A)
+I (..\Src\TraceRecorder\streamports\Jlink_RTT\include\SEGGER_RTT_Conf.h)(0x5BBDF97A)
+I (..\Src\TraceRecorder\streamports\Jlink_RTT\include\SEGGER_RTT.h)(0x5BBDF97A)
+I (..\Src\TraceRecorder\include\trcKernelPort.h)(0x5BBDF97A)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h)(0x5B968247)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/portable.h)(0x5B968247)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/deprecated_definitions.h)(0x5B968247)
+I (../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3/portmacro.h)(0x5B968247)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h)(0x5B968247)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/task.h)(0x5B968247)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/list.h)(0x5B968247)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/timers.h)(0x5B968247)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/queue.h)(0x5B968247)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h)(0x5B968247)
+I (../Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h)(0x5B968247)
+I (D:\Keil C51\ARM\ARMCC\include\string.h)(0x57F606B8)
+I (../Inc/usart.h)(0x5BD1824B)
+I (Myself\485Module.h)(0x5BC98C9D)
+I (Myself\DS18b20Module.h)(0x5BCFE120)
+I (Myself\BoardSet_Parameters.h)(0x5BD1849E)
 F (../Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c)(0x5B96827E)(--c99 -c --cpu Cortex-M3 -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ../Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc -I ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy -I ../Drivers/CMSIS/Device/ST/STM32F1xx/Include -I ../Drivers/CMSIS/Include -I ../Middlewares/Third_Party/FreeRTOS/Source/portable/RVDS/ARM_CM3 -I ../Middlewares/Third_Party/FreeRTOS/Source/include -I ../Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS -I .\Myself -I ..\Src\TraceRecorder\config -I ..\Src\TraceRecorder\include -I ..\Src\TraceRecorder\streamports\Jlink_RTT\include-I"E:\Last-time\Lesson -5_i\MDK-ARM\RTE\_First_Lesson"-I"D:\Keil C51\ARM\PACK\ARM\CMSIS\5.0.0\CMSIS\Include"-I"D:\Keil C51\ARM\PACK\Keil\STM32F1xx_DFP\2.2.0\Device\Include"-D__UVISION_VERSION="522" -D_RTE_ -DSTM32F10X_HD -DUSE_HAL_DRIVER -DSTM32F103xE-o "first lesson\stm32f1xx_hal_gpio_ex.o" --omf_browse "first lesson\stm32f1xx_hal_gpio_ex.crf" --depend "first lesson\stm32f1xx_hal_gpio_ex.d")
 I (../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h)(0x5B96827E)
 I (../Inc/stm32f1xx_hal_conf.h)(0x5BD1824B)

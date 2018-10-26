@@ -15,6 +15,7 @@
 "first lesson\ds18b20module.o"
 "first lesson\temp_controltask_resources.o"
 "first lesson\boardset_parameters.o"
+"first lesson\elfin-eg11_gprs_module.o"
 "first lesson\stm32f1xx_hal_gpio_ex.o"
 "first lesson\stm32f1xx_hal_tim.o"
 "first lesson\stm32f1xx_hal_tim_ex.o"

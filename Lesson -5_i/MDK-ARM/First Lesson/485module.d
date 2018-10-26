@@ -59,3 +59,4 @@ first lesson\485module.o: Myself\485Module.h
 first lesson\485module.o: Myself\DS18b20Module.h
 first lesson\485module.o: Myself\public.h
 first lesson\485module.o: Myself\BoardSet_Parameters.h
+first lesson\485module.o: Myself\Elfin-EG11_GPRS_Module.h

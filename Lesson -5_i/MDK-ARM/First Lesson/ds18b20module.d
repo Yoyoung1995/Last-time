@@ -59,4 +59,5 @@ first lesson\ds18b20module.o: Myself\485Module.h
 first lesson\ds18b20module.o: Myself\public.h
 first lesson\ds18b20module.o: Myself\DS18b20Module.h
 first lesson\ds18b20module.o: Myself\BoardSet_Parameters.h
+first lesson\ds18b20module.o: Myself\Elfin-EG11_GPRS_Module.h
 first lesson\ds18b20module.o: ../Inc/tim.h

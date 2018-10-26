@@ -274,6 +274,8 @@ void USART2_Serve_Task(void const * argument)
 		//----------  处理从下面开始 --------------
 		if( ( UsartType_2.RX_pData[0] != 1)&&(UsartType_2.RX_pData[0] != 63) )			//先简单判断
 				continue;
+		if(  UsartType_2.RX_pData[1] != 3 )		//屏蔽掉其它码回传的数据帧
+				continue;
 		if( uxQueueSpacesAvailable(GPRS_DataSend.xPointerQueue)>=1 )					//队列有没有满？
 				pMail = pvPortMalloc(sizeof(USART_RECEIVETYPE));		//申请动态内存
 		if( pMail != NULL )				//动态内存申请成功了？
@@ -336,7 +338,7 @@ void GPRS_DataSendTask(void const * argument)
 		
 		xQueueReceive(GPRS_DataSend.xPointerQueue,		//等待消息队列  500个Ticks
 									&pMail,
-									500);		
+									1000);		
 		
 		Modbus_03_Search( 1, 5103,19);		//读外机 5104~5122地址的寄存器
 		
@@ -346,7 +348,7 @@ void GPRS_DataSendTask(void const * argument)
 		
  		xQueueReceive(GPRS_DataSend.xPointerQueue,		//等待消息队列  500个Ticks
 									&pMail,
-									500);	   
+									1000);	   
 		
 		osDelay(30);		//( 给数字电表留点处理时间，因为 否则 在数字电表看来，总线上的两串数据帧是连在一起的 )
 		

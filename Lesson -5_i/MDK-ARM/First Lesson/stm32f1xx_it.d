@@ -60,3 +60,4 @@ first lesson\stm32f1xx_it.o: .\Myself\485Module.h
 first lesson\stm32f1xx_it.o: .\Myself\public.h
 first lesson\stm32f1xx_it.o: .\Myself\DS18b20Module.h
 first lesson\stm32f1xx_it.o: .\Myself\BoardSet_Parameters.h
+first lesson\stm32f1xx_it.o: .\Myself\Elfin-EG11_GPRS_Module.h
