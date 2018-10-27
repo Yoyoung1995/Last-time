@@ -179,7 +179,7 @@ void MX_FREERTOS_Init(void) {
   /* USER CODE BEGIN RTOS_QUEUES */
   /* add queues, ... */
 	Far_Modify.xPointerQueue = xQueueCreate(5,sizeof(void *));
-	GPRS_DataSend.xPointerQueue = xQueueCreate(20,sizeof(void *));
+	GPRS_DataSend.xPointerQueue = xQueueCreate(1,sizeof(void *));
   /* USER CODE END RTOS_QUEUES */
 }
 

@@ -53,11 +53,15 @@ void HeatAir_Running(void)
 	}
 	else if( (-1<diff) && (diff<0) ) 
 	{
+		Modbus_SetRegister(1,999,2);
+		osDelay(100);
 		SetTemp = (BoardRegister[22]-3000)*0.01 + 1 ;
 		Modbus_SetRegister(1,1059,(int16_t)SetTemp);
 	}
 	else if( (0<diff) && (diff<1) ) 
 	{
+		Modbus_SetRegister(1,999,2);
+		osDelay(100);
 		SetTemp = (BoardRegister[22]-3000)*0.01 ;
 		Modbus_SetRegister(1,1059,(int16_t)SetTemp);		
 	}
@@ -85,11 +89,15 @@ void CoolAir_Running(void)
 	}
 	else if( (0<diff) && (diff<1) ) 
 	{
+		Modbus_SetRegister(1,999,3);
+		osDelay(100);
 		SetTemp = (BoardRegister[18]-3000)*0.01 - 1 ;
 		Modbus_SetRegister(1,1089,(int16_t)SetTemp);
 	}
 	else if( (0>diff) && (diff>-1) ) 
 	{
+		Modbus_SetRegister(1,999,3);
+		osDelay(100);
 		SetTemp = (BoardRegister[18]-3000)*0.01 ;
 		Modbus_SetRegister(1,1089,(int16_t)SetTemp);		
 	}
